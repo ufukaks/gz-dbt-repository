@@ -2,19 +2,28 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
+    - name: raw_gz_sales
+      description: "Satışlar Tablosu"
       columns:
-          - name: id
+          - name: orders_id
             description: "The primary key for this table"
             tests:
                 - unique
                 - not_null
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
+    - name: raw_gz_product
+      description: "Ürünler Tablosu"
       columns:
-          - name: id
+          - name: products_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: raw_gz_ship
+      description: "Kargo Tablosu"
+      columns:
+          - name: orders_id
             description: "The primary key for this table"
             tests:
                 - unique
